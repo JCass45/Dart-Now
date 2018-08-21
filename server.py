@@ -23,6 +23,9 @@ def times():
     southbound = []
     northbound = []
     for child in root:
+        if int(child.find('{http://api.irishrail.ie/realtime/}Duein').text) > 20 or child.find('{http://api.irishrail.ie/realtime/}Traintype').text != 'DART':
+            continue
+
         trainData = {
             'Dest': child.find('{http://api.irishrail.ie/realtime/}Destination').text,
             'DueIn': child.find('{http://api.irishrail.ie/realtime/}Duein').text,

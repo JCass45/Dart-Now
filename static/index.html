@@ -8,12 +8,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
 </head>
 
 <body>
     <header>
-        <h1>Dart Now</h1>
+        <h1>Dart Now &#x1F683</h1>
     </header>
 
     <form name="stations-form" role="search" autocomplete="off">
@@ -27,20 +27,26 @@
 
     <div id='realtime-data-table'>
         <table id="northbound-table">
-            <th colspan="2">Northbound</th>
-            <tr>
-                <th>Destination</th>
-                <th>Due In</th>
-                <th>Late By</th>
-            </tr>
+            <thead>
+                <th colspan="3" class="table-header">Northbound</th>
+                <tr>
+                    <th>Destination</th>
+                    <th>Due In</th>
+                    <th>Late By</th>
+                </tr>
+            </thead>
+            <tbody id="northbound-table-body"></tbody>
         </table>
         <table id="southbound-table">
-            <th colspan="2">Southbound</th>
-            <tr>
-                <th>Destination</th>
-                <th>Due In</th>
-                <th>Late By</th>
-            </tr>
+            <thead>
+                <th colspan="3" class="table-header">Southbound</th>
+                <tr>
+                    <th>Destination</th>
+                    <th>Due In</th>
+                    <th>Late By</th>
+                </tr>
+            </thead>
+            <tbody id="southbound-table-body"></tbody>
         </table>
     </div>
 

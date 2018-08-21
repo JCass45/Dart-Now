@@ -13,7 +13,8 @@ function getStationData(event) {
         xhr.open('GET', '/times?station=' + searchText, true);
         xhr.onload = function () {
             if (xhr.status == 200) {
-                populateTable(JSON.parse(xhr.response))
+                populateTable(JSON.parse(xhr.response).northbound, document.getElementById('northbound-table-body'))
+                populateTable(JSON.parse(xhr.response).southbound, document.getElementById('southbound-table-body'))
             }
         }
 
@@ -26,33 +27,13 @@ function validateSearchTerm(searchTerm) {
     return stationList.includes(searchTerm);
 }
 
-function populateTable(data) {
-    var table = document.getElementById('northbound-table')
-    clearTable(table)
-    data.northbound.forEach(trainDataObj => {
-        var row = table.insertRow()
+function populateTable(data, table_body) {
+    table_body.innerHTML = '';
+    data.forEach(trainDataObj => {
+        var row = table_body.insertRow()
         for (x in trainDataObj) {
             var cell = row.insertCell()
             cell.innerHTML = trainDataObj[x]
         }
     })
-
-    table = document.getElementById('southbound-table')
-    clearTable(table)
-    data.southbound.forEach(trainDataObj => {
-        var row = table.insertRow()
-        for (x in trainDataObj) {
-            var cell = row.insertCell()
-            cell.innerHTML = trainDataObj[x]
-        }
-    })
-}
-
-function clearTable(table) {
-    var numRows = table.childElementCount
-
-    // Leave the first row which has the Destination, Due In, Late By headings
-    for (var i = 1; i < numRows; i++) {
-        table.removeChild(table.children[i])
-    }
 }
