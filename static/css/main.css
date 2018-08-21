@@ -1,0 +1,49 @@
+body {
+    background-color: #e9e7de;
+    margin: 0;
+    font-family: Tahoma, Geneva, sans-serif
+}
+
+header {
+    background-color: #3BB14A;
+    padding: 1.5em 0;
+    margin-bottom: 2em;
+}
+
+header h1 {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.table-header {
+    background-color: #3BB14A
+}
+
+#station-search {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#realtime-data-table {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#realtime-data-table table {
+    margin: 2em 0;
+    width: 100%;
+    border-spacing: 0;
+    outline: thick solid black;
+}
+
+#realtime-data-table th {
+    /* outline: thin solid black; */
+    height: 2em;
+}
+
+#realtime-data-table td {
+    background-color: #cecaca;
+    border-bottom: thin solid grey;
+    text-align: center;
+    height: 1.5em;
+}
