@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dart Now</title>
+    <meta name="author" content="Jack Cassidy">
+    <meta name="description" content="A handy website for quicly checking realtime DART times">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>Dart Now</h1>
+    </header>
+
+    <form name="stations-form" role="search" autocomplete="off">
+        <div id="station-search">
+            <input type="search" name="q" id="station-select" list="stations" placeholder="Search for station..." required autofocus>
+            <button id="submitButton" onclick="getStationData(event)">Get Station Time</button>
+        </div>
+    </form>
+
+    <p id="no-station-error"></p>
+
+    <div id='realtime-data-table'>
+        <table id="northbound-table">
+            <th colspan="2">Northbound</th>
+            <tr>
+                <th>Destination</th>
+                <th>Due In</th>
+                <th>Late By</th>
+            </tr>
+        </table>
+        <table id="southbound-table">
+            <th colspan="2">Southbound</th>
+            <tr>
+                <th>Destination</th>
+                <th>Due In</th>
+                <th>Late By</th>
+            </tr>
+        </table>
+    </div>
+
+    <datalist id="stations">
+        <option value="Malahide"></option>
+        <option value="Portmarnock"></option>
+        <option value="Clongriffin"></option>
+        <option value="Sutton"></option>
+        <option value="Bayside"></option>
+        <option value="Howth Junction"></option>
+        <option value="Howth"></option>
+        <option value="Kilbarrack"></option>
+        <option value="Raheny"></option>
+        <option value="Harmonstown"></option>
+        <option value="Killester"></option>
+        <option value="Clontarf Road"></option>
+        <option value="Dublin Connolly"></option>
+        <option value="Tara Street"></option>
+        <option value="Dublin Pearse"></option>
+        <option value="Grand Canal Doc "></option>
+        <option value="Lansdowne Road"></option>
+        <option value="Sandymount"></option>
+        <option value="Sydney Parad "></option>
+        <option value="Booterstown"></option>
+        <option value="Blackrock"></option>
+        <option value="Seapoint"></option>
+        <option value="Salthill"></option>
+        <option value="Dun Laoghaire"></option>
+        <option value="Sandycove"></option>
+        <option value="Glenageary"></option>
+        <option value="Dalkey"></option>
+        <option value="Killiney"></option>
+        <option value="Shankill"></option>
+        <option value="Bray"></option>
+        <option value="Greystones"></option>
+    </datalist>
+</body>
+
+</html>
